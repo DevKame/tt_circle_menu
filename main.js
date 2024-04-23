@@ -62,6 +62,3 @@ async function blobOut() {
     }).finished;
     menu.classList.remove("expanded");
 }
-
-const secBtns = document.querySelectorAll(".menu-btn:not(.menu)");
-console.log(secBtns);
