@@ -2,7 +2,7 @@
 
 const menu = document.querySelector(".menu");
 
-menu.addEventListener("click", e => {
+menu.addEventListener("click", () => {
     !menu.classList.contains("expanded") ?
     blobIn() : blobOut();
 });
