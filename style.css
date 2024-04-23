@@ -1,0 +1,98 @@
+#wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-btn {
+    --btn-color: #5a76e4;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    background-image: radial-gradient(var(--btn-color) 60%, white);
+    position: relative;
+}
+.menu-btn * {
+    pointer-events: none;
+}
+.menu-btn.expanded {
+    transform: scale(.2);
+}
+.menu-btn::before,
+.menu-btn::after {
+    content: "";
+    position: absolute;
+    transition: all .3s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.menu-btn::before {
+    top: 5px;
+    right: 3px;
+    width: 45px;
+    height: 20px;
+    border-radius: 100%;
+    transform: rotate(30deg);
+}
+.menu-btn::after {
+    bottom: 10px;
+    right: 5px;
+    width: 30px;
+    height: 10px;
+    border-radius: 100%;
+    transform: rotate(-33deg);
+}
+.menu-btn:hover::before {
+    transform: rotate(30deg) scale(.85);
+}
+.menu-btn:hover::after {
+    transform: rotate(-33deg) scale(.85);
+}
+.menu {
+    z-index: 1;
+}
+.menu-btn:not(.menu) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.expanded ~ .profile {
+    top: 25%;
+    left: 35%;
+    transition-delay: 50ms;
+}
+.expanded ~ .share {
+    top: 25%;
+    left: 65%;
+    transition-delay: 300ms;
+}
+
+
+.expanded ~ .settings {
+    top: 50%;
+    left: 21%;
+    transition-delay: 100ms;
+}
+.expanded ~ .github {
+    top: 50%;
+    left: 79%;
+    transition-delay: 250ms;
+}
+
+
+.expanded ~ .message {
+    top: 75%;
+    left: 35%;
+    transition-delay: 150ms;
+}
+.expanded ~ .logout {
+    top: 75%;
+    left: 65%;
+    transition-delay: 200ms;
+}
